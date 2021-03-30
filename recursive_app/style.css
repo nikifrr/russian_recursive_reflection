@@ -1,0 +1,36 @@
+body {
+    height: 100vh;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.recursive-header {
+    height: 10vh;
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.h1 {
+    text-align: center;
+}
+.recursive-main {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 90vh;
+}
+.feature {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    text-align: center;
+    border: solid 1px black;
+}
+.feature-name {
+    border-bottom: solid 1px black;
+}
