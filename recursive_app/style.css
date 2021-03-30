@@ -34,3 +34,6 @@ body {
 .feature-name {
     border-bottom: solid 1px black;
 }
+.feature-img {
+    width: 100%;
+}
