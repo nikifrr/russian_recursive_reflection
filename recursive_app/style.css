@@ -34,6 +34,12 @@ body {
 .feature-name {
     border-bottom: solid 1px black;
 }
-.feature-img {
-    width: 100%;
+.feature-content {
+    display: flex;
+    justify-content: center;
+    align-content: stretch;
+}
+.feature-content>* {
+    width: 80%;
+    padding: 5px;
 }
