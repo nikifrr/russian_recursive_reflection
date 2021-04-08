@@ -2,7 +2,7 @@ class Eyes {
     constructor() {
         const eyesList = document.querySelectorAll('.feature-img');
         for (let i = 0; i < eyesList.length; i++) {
-            console.log(`eye ${i}: ${eyesList[i]}`);
+            // console.log(`eye ${i}: ${eyesList[i]}`);
         }
     }
 }
@@ -14,12 +14,14 @@ let eye = document.querySelector('.feature-img');
 
 eye.onmousedown = function(event) {
 
+    let departure = eye.parentNode;
     let shiftX = event.clientX - eye.getBoundingClientRect().left;
     let shiftY = event.clientY - eye.getBoundingClientRect().top;
 
+    eye.classList.add('grabbing');
     eye.style.position = 'absolute';
     eye.style.zIndex = 1000;
-    document.body.append(eye);
+    // document.body.append(eye);
 
     moveAt(event.pageX, event.pageY);
 
@@ -55,11 +57,13 @@ eye.onmousedown = function(event) {
 
     eye.onmouseup = function() {
       document.removeEventListener('mousemove', onMouseMove);
+      eye.classList.remove('grabbing');
       if (currentDroppable) {
         leaveDroppable(currentDroppable);
         eye.onmouseup = null;
-        eye.style.position = 'static';
         insert(currentDroppable, eye);
+      } else {
+        insert(departure, eye);
       }
       
     };
@@ -78,5 +82,6 @@ function leaveDroppable(elem) {
   }
 
 function insert (parent, child) {
+    eye.style.position = 'static';
     parent.appendChild(child);
 }
