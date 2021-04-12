@@ -15,8 +15,6 @@ class Element {
         this.shiftY;
         this.hidden;
         this.elementDom.onmousedown = (e) => {
-            // this.testTest();
-            // console.log(this);
             this.shiftX = e.clientX - this.elementDom.getBoundingClientRect().left;
             this.shiftY = e.clientY - this.elementDom.getBoundingClientRect().top;
             this.elementDom.classList.add('grabbing');
@@ -29,7 +27,7 @@ class Element {
             this.elementDom.classList.remove('grabbing');
             if (this.currentDroppable) {
                 this.leaveDroppable(this.currentDroppable);
-                // this.elementDom.onmouseup = null;
+                this.departure = this.currentDroppable;
                 this.insert(this.currentDroppable, this.elementDom);
             } else {
                 this.insert(this.departure, this.elementDom);
@@ -49,7 +47,7 @@ class Element {
         let elemBelow = document.elementFromPoint(e.clientX, e.clientY);
         this.elementDom.hidden = false;
         if (!elemBelow) return;
-        let droppableBelow = elemBelow.closest('.droppable');
+        let droppableBelow = elemBelow.closest('.featured-container');
         if (this.currentDroppable != droppableBelow) {
             if (this.currentDroppable) this.leaveDroppable(this.currentDroppable);
             this.currentDroppable = droppableBelow;

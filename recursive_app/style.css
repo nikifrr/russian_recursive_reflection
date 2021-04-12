@@ -38,7 +38,7 @@ body {
 .feature-name {
     border-bottom: solid 1px black;
 }
-.feature-content {
+.featured-container {
     display: flex;
     height: 140px;
     flex-grow: 2;
@@ -46,11 +46,9 @@ body {
     justify-content: center;
     align-content: stretch;
 }
-.feature-content>img {
-    align-self: center;
-}
 
 .feature-img {
+    align-self: center;
     width: 120px;
     cursor: grab;
 }
