@@ -1,0 +1,107 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header header header header header"
+        "pool . main main ."
+        "footer footer footer footer footer";
+
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s;
+    transition: background-color 0.2s;
+}
+.recursive-header {
+    grid-area: header;
+    width: 100vw;
+    height: 10vh;
+    min-height: 40px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.h1 {
+    text-align: center;
+}
+.face {
+    background-image: url("../img/face.png");
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.recursive-main {
+    grid-area: main;
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+.feature {
+    min-width: 200px;
+    height: 200px;
+    margin: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border: solid 1px black;
+}
+.feature-name {
+    border-bottom: solid 1px black;
+}
+.featured-container {
+    display: flex;
+    height: 140px;
+    flex-grow: 2;
+    flex-shrink: 1;
+    justify-content: center;
+    align-content: stretch;
+}
+
+.feature-img {
+    align-self: center;
+    width: 120px;
+    cursor: grab;
+}
+
+.grabbing {
+    cursor: grabbing;
+}
+
+.pool-of-elements {
+    margin: 15px;
+    grid-area: pool;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.elements-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    
+}
+
+.elements-list-item {
+    min-width: 100px;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
