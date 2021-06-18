@@ -4,39 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/undohtml.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <title>Recursive App</title>
 </head>
 <body>
     <header class="recursive-header">
-        <h1 class="h1">This is the header</h1>
+        <h2 class="h1">This is Recursive App</h1>
     </header>
+    <aside class="pool-of-elements">
+        <h2>This is the pool of elements</h2>
+        <ul class="elements-list">
+            <li class="elements-list-item featured-container droppable"><img class="feature-img" src="./img/all-seeing-eye.png" alt="" srcset=""></li>
+            <li class="elements-list-item featured-container droppable"><img class="feature-img" src="./img/left-eye.png" alt="" srcset=""></li>
+            <li class="elements-list-item featured-container droppable"><img src="./img/lips.png" alt="" class="feature-img"></li>
+            <li class="elements-list-item featured-container droppable"><img src="./img/nose.png" alt="" class="feature-img"></li>
+            <li class="elements-list-item featured-container droppable"><img src="./img/right-eye.png" alt="" class="feature-img"></li>
+        </ul>
+    </aside>
     <main class="recursive-main">
-        <div class="feature">
-            <h3 class="feature-name">
-                This is the first feature
-            </h3>
-            <div class="feature-content droppable" id="box-1">
-                <!--put some content below-->
-                <img class="feature-img" id="eye-1" src="./img/eye.jpg" alt="" srcset="">
-            </div> 
-        </div>
-        <div class="feature">
-            <h3 class="feature-name">
-                This is the second feature
-            </h3>
-            <div class="feature-content droppable" id="box-2">
-                <!--put some content below-->
-                <img class="feature-img" id="eye-2" src="./assets/New Project (2).png" alt="eye">
-            </div>
-        </div>
-        <div class="feature">
-            <h3 class="feature-name">
-                This is the third feature
-            </h3>
-            <div class="feature-content droppable" id="box-3">
-
-            </div>
+        <h2>This is the face container</h2>
+        <div class="face">
+            <div class="third-eye featured-container droppable "></div>
+            <div class="left-eye featured-container droppable"></div>
+            <div class="right-eye featured-container droppable"></div>
+            <div class="nose featured-container droppable"></div>
+            <div class="lips featured-container droppable"></div>
         </div>
     </main>
     <script src="./app.js"></script>
