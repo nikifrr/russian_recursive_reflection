@@ -1,9 +1,7 @@
 class Face {
   constructor(featuringClass) {
-    const elementList = document.querySelectorAll(featuringClass);
-    for (let i = 0; i < elementList.length; i++) {
-      this.eyesList = new Element(elementList[i]);
-    }
+    const faceFeatures = document.querySelectorAll(featuringClass);
+    faceFeatures.forEach((faceFeature) => new Element(faceFeature));
   }
 }
 
@@ -11,7 +9,15 @@ function allowDragging() {
   const myFace = new Face('.feature-img');
 }
 function rollback() {
-    allowDragging();
+  const faceFeatures = document.querySelectorAll('.feature-img');
+  const initialFeaturesContainers = document.querySelectorAll('.initial');
+
+  faceFeatures.forEach((item, index) => {
+    
+    item.remove();
+    initialFeaturesContainers[index].appendChild(item)
+  });
+  //   initialFeaturesContainers.forEach((item) => console.log(item));
 }
 
 class Element {
@@ -46,6 +52,9 @@ class Element {
     this.elementDom.ondragstart = () => {
       return false;
     };
+  }
+  log() {
+    console.log('log');
   }
   moveAt(pageX, pageY) {
     this.elementDom.style.left = pageX - this.shiftX + 'px';
